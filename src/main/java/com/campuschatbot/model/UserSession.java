@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserSession {
-    private String state; // e.g., "MAIN", "COURSES", "EVENTS", "LIBRARY_BOOKS", "SELECT_SUBJECTS"
+    private String state; // e.g., "MAIN", "COURSES", "COURSE_LIST", "LIBRARY_BOOKS", "SELECT_SUBJECTS"
     private List<String> selectedSubjects; // For multiple subject selections
 
     public UserSession() {
