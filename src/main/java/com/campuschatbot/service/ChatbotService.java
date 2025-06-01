@@ -18,32 +18,37 @@ public class ChatbotService {
         if (lowerCaseMessage.equals("hi") || lowerCaseMessage.equals("hello") || lowerCaseMessage.equals("hey")) {
             session.setState("MAIN");
             session.clearSubjects();
-            return "Hi there! Welcome to the Campus Chatbot. Type 'menu' to see what I can assist you with.";
+            return "\nHi there! Welcome to the Campus Chatbot. Type 'menu' to see what I can assist you with.\n";
         } else if (lowerCaseMessage.contains("how are you")) {
             session.setState("MAIN");
             session.clearSubjects();
-            return "I'm doing awesome, thanks for asking! How can I help you today? Type 'menu' for options.";
+            return "\nI'm doing awesome, thanks for asking! How can I help you today? Type 'menu' for options.\n";
+        } else if (lowerCaseMessage.equals("bye") || lowerCaseMessage.equals("Bye") || lowerCaseMessage.equals("ok bye")){
+            session.setState("MAIN");
+            session.clearSubjects();
+            return "\nOk Bye. Looking forward to see you again.\n";
+
         }
 
-        // Handle menu command
+            // Handle menu command
         if (lowerCaseMessage.equals("menu") || lowerCaseMessage.equals("options")) {
             session.setState("MAIN");
             session.clearSubjects();
-            return "I can assist with the following topics:\n" +
-                    "1. Library information (type 'library')\n" +
-                    "2. Cafeteria details (type 'cafeteria')\n" +
-                    "3. Campus events (type 'events')\n" +
-                    "4. Available courses (type 'courses')\n" +
-                    "5. Frequently Asked Questions (type 'faqs')\n" +
-                    "Type a topic to learn more!";
+            return "\nI can assist with the following topics:\n" +
+                    "\n1. Library information (type 'library')\n" +
+                    "\n2. Cafeteria details (type 'cafeteria')\n" +
+                    "\n3. Campus events (type 'events')\n" +
+                    "\n4. Available courses (type 'courses')\n" +
+                    "\n5. Frequently Asked Questions (type 'faqs')\n" +
+                    "\nType a topic to learn more!";
         }
 
         // Allow direct topic navigation from any state
         if (lowerCaseMessage.equals("courses")) {
             session.setState("COURSES");
             session.clearSubjects();
-            return "Course-related queries:\n" +
-                    "1. List of courses\n" +
+            return "\nCourse-related queries:\n" +
+                    "\n1. List of courses\n" +
                     "2. Exam information\n" +
                     "3. Timetable schedules\n" +
                     "Type a number (e.g., '1') to proceed.";
